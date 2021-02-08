@@ -37,3 +37,4 @@ void drawPieces(Gameboard *, SDL_Renderer *, int [8][8], int, int [8][8]);
 void movePiece(int, int, int [8][8], int [8][8], SDL_Rect);
 void showText(int, SDL_Surface *, SDL_Renderer *, TTF_Font *);
 int checkValid(int x, int y, int xd, int yd, int [8][8], int [8][8]);
+int checkRook(int x, int y, int, int, int [8][8]);

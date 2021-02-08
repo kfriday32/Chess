@@ -260,8 +260,11 @@ void showText(int player, SDL_Surface *main, SDL_Renderer *renderer, TTF_Font *f
 // This function determines if a mood is valid.
 int checkValid(int x, int y, int xd, int yd, int board[8][8], int colors[8][8])
 {
+    int valid;
+
     switch (board[y][x]) {
         case rook:
+            valid = checkRook();
             break;
         case bishop:
             break;
@@ -278,4 +281,41 @@ int checkValid(int x, int y, int xd, int yd, int board[8][8], int colors[8][8])
     }
     
     return 1;
+}
+
+
+// This function checks if a move made by the rook is valid.
+int checkRook(int x, int y, int xdest, int ydest, int board[8][8])
+{
+    int i;
+
+    // rook must move vertically
+    if ((x != xdest) && (y != ydest)) {
+        return 0;
+    }
+    else if ((xdest == x) && (ydest == y)) {
+        return 0; 
+    }
+
+    if (ydest == y) {
+        if (xdest > x) {
+            //TODO: check for intermediate pieces
+            for(i = x; i <= xdest; i++) {
+                if (board[i][y]
+            }
+        }
+        else if (xdest < x) {
+            //TODO: check for intermediate pieces
+        }
+    }
+    else if (xdest == x) {
+        if (ydest > y) {
+            //TODO: check for intermediate pieces
+            for(i = x; i <= xdest; i++) {
+                if (board[i][y]
+            }
+        }
+        else if (ydest < y) {
+            //TODO: check for intermediate pieces
+        }
 }
